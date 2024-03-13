@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.fixed-box {
+    width: 150px; /* Ancho de la primera caja */
+    height: 150px; /* Altura de la primera caja */
+    background-color: #6655ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid; /* Usamos CSS grid para crear la cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-rows: 1fr 1fr; /* Dos filas */
+    width: 100%; /* Ancho del contenedor de la cuadrícula */
+    height: 100%; /* Altura del contenedor de la cuadrícula */
+}
+
+.flexible-box {
+    flex-grow: 1;
+    height: auto;
+    max-width: 300px; /* Reducimos el tamaño de la caja flexible */
+    background-color: #b5ab5b;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.inner-box {
+    width: calc(33.33% - 10px); /* Establecemos el ancho para tres columnas con margen entre ellas */
+    height: 80px; /* Reducimos la altura de los elementos */
+    background-color: #ff40fc;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Reducimos el tamaño de la fuente */
+    font-weight: bold;
+}
+
+
+/* Estilos para dispositivos móviles en orientación vertical */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .fixed-box {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .flexible-box {
+        width: 100%;
+        height: auto;
+    }
+}
